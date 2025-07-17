@@ -5,7 +5,7 @@ interface IconProps {
 	theme?: "light" | "dark";
 }
 
-export function ReactRouterIcon({ className, theme }: IconProps) {
+function ReactRouterIcon({ className, theme }: IconProps) {
 	const color = theme === "light" ? "#121212" : "#FFFFFF";
 
 	return (
@@ -87,7 +87,7 @@ export function GithubIcon({ className }: IconProps) {
 	);
 }
 
-export function BetterAuthIcon({ className }: IconProps) {
+function BetterAuthIcon({ className }: IconProps) {
 	return (
 		<svg
 			width="60"

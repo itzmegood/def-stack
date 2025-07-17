@@ -2,7 +2,7 @@ import { betterFetch } from '@better-fetch/fetch';
 import { redirect, type unstable_MiddlewareFunction } from 'react-router';
 import { authSessionContext } from '~/lib/contexts';
 
-export async function fetchAuthSession(request: Request) {
+async function fetchAuthSession(request: Request) {
   const baseURL = new URL(request.url).origin;
   const { data: session } = await betterFetch('/api/auth/get-session', {
     baseURL,

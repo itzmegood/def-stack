@@ -24,8 +24,8 @@ export const SOCIAL_PROVIDER_CONFIGS = [
 ] as const;
 
 // 2. Derive type from configs
-export type AllowedProvider = (typeof SOCIAL_PROVIDER_CONFIGS)[number]['id'];
-export type SocialProviderConfig = {
+type AllowedProvider = (typeof SOCIAL_PROVIDER_CONFIGS)[number]['id'];
+type SocialProviderConfig = {
   id: AllowedProvider;
   name: string;
   icon: FC<SVGProps<SVGSVGElement>>;
@@ -33,7 +33,7 @@ export type SocialProviderConfig = {
 
 // 3. Use z.enum needed string tuple format
 // This approach is closest to the original code's intent and solves the type issue
-export const ALLOWED_PROVIDERS = [
+const ALLOWED_PROVIDERS = [
   SOCIAL_PROVIDER_CONFIGS[0].id,
   ...SOCIAL_PROVIDER_CONFIGS.slice(1).map((config) => config.id),
 ] as const;
